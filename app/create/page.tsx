@@ -85,6 +85,12 @@ export default function Home() {
                       />
                   </div>
 
+                  {message && (
+                      <div className={`mt-4 p-2 rounded ${message.includes("sucesso") ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
+                          {message}
+                      </div>
+                  )}
+
                   <div className="flex justify-between mt-6">
                       <Button
                           className="uppercase"

@@ -25,7 +25,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
 import {
@@ -222,12 +221,12 @@ export default function Crafts() {
 
     const calculatedDetails = calculateCraftDetails(processedIngredients, newCraft.quantityProduced, newCraft.margin, ingredientCosts);
     
-    let updatedFarms = [...farms];
+    const updatedFarms = [...farms];
     const farmIndex = farms.findIndex(f => f.name === currentFarm.name);
     if (farmIndex === -1) { toast.error("Fazenda não encontrada."); return; }
 
     const farmToUpdate = { ...farms[farmIndex] };
-    let farmCrafts = [...(farmToUpdate.crafts || [])];
+    const farmCrafts = [...(farmToUpdate.crafts || [])];
 
     if (dialogMode === "edit" && editingCraftId) {
       const craftIndex = farmCrafts.findIndex(c => c.id === editingCraftId);
